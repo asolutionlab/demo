@@ -1,10 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  </head>
-  <body>
-    <h1>
-      <p> Demo, a solution lab coming soon! </p>
-    </h1>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathing Light Title</title>
+</head>
+
+<body>
+    <div class="breathing-light">
+        Ha! Cáfe
+    </div>
+    <div class="wave"></div>
+</body>
+<style>
+    @import url('https://fonts.font.im/css?family=Lobster');
+
+    * {
+        margin: 0;
+    }
+
+    body,
+    html {
+        background: black;
+        font-family: 'Lobster', sans-serif;
+        font-size: 64px;
+        height: 100vh;
+    }
+
+    .wave {
+        background: linear-gradient(to right, #FFD700, #9b7300, #ffdd00);
+        position: relative;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            min-width: 300vw;
+            min-height: 300vw;
+            background-color: #000;
+            animation-name: rotate;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        &:before {
+            bottom: 17vh;
+            border-radius: 40%;
+            animation-duration: 10s;
+        }
+
+        &:after {
+            bottom: 12vh;
+            opacity: .2;
+            border-radius: 45%;
+            animation-duration: 10s;
+        }
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: translate(-50%, 0) rotateZ(0deg);
+        }
+
+        25% {
+            transform: translate(-50%, -2%) rotateZ(90deg);
+        }
+
+        50% {
+            transform: translate(-50%, -2%) rotateZ(180deg);
+        }
+
+        75% {
+            transform: translate(-50%, -2%) rotateZ(270deg);
+        }
+
+        100% {
+            transform: translate(-50%, 0%) rotateZ(360deg);
+        }
+    }
+
+    .breathing-light {
+        position: absolute;
+        z-index: 1;
+        padding-top: 20%;
+        padding-left: 25%;
+        animation: breathe 5s infinite;
+    }
+
+    @keyframes breathe {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.5;
+            text-shadow: 0 0 20px #CFB53B, 0 0 20px #CFB53B, 0 0 20px #CFB53B, 0 0 20px #CFB53B;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+</style>
+
 </html>
