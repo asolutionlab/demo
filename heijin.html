@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ha! Cafe</title>
+</head>
+
+<body>
+        <a href="index.html"><img class="breathing-light" src="hacafe.png" /></a>
+<!--    <div class="wave"></div>-->
+</body>
+<style>
+    body{
+        position: relative;
+        background: url("heijin.jpg") repeat;
+        min-height: 100vh;
+    }
+    img{
+        width: 40%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        animation: breathe 10s infinite;
+    }
+    @keyframes breathe {
+        0% {
+            opacity: .25;
+        }
+
+        25% {
+            opacity: .5;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        75% {
+            opacity: .5;
+        }
+
+        100% {
+            opacity: .25;
+        }
+    }
+
+</style>
+
+</html>
