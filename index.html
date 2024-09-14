@@ -4,105 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ha! Cáfe</title>
+    <title>Ha! Cafe</title>
 </head>
 
 <body>
-    <div class="breathing-light">
-        Ha! Cáfe
-    </div>
-    <div class="wave"></div>
+        <img class="breathing-light" src="hacafe.png" />
+<!--    <div class="wave"></div>-->
 </body>
 <style>
-    @import url('https://fonts.font.im/css?family=Lobster');
-
-    * {
-        margin: 0;
-    }
-
-    body,
-    html {
-        background: black;
-        font-family: 'Lobster', sans-serif;
-        font-size: 64px;
-        height: 100vh;
-    }
-
-    .wave {
-        background: linear-gradient(to right, #FFD700, #9b7300, #ffdd00);
+    body{
         position: relative;
-        align-items: center;
+        background: linear-gradient(to right, #75673b, #5e522f, #463e23);
         min-height: 100vh;
-        overflow: hidden;
-
-        &:before,
-        &:after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            min-width: 300vw;
-            min-height: 300vw;
-            background-color: #000;
-            animation-name: rotate;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-        }
-
-        &:before {
-            bottom: 17vh;
-            border-radius: 40%;
-            animation-duration: 20s;
-        }
-
-        &:after {
-            bottom: 12vh;
-            opacity: .2;
-            border-radius: 45%;
-            animation-duration: 20s;
-        }
     }
-
-    @keyframes rotate {
+    img{
+        width: 20%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        animation: breathe 10s infinite;
+    }
+    @keyframes breathe {
         0% {
-            transform: translate(-50%, 0) rotateZ(0deg);
+            opacity: .25;
         }
 
         25% {
-            transform: translate(-50%, -2%) rotateZ(90deg);
+            opacity: .5;
         }
 
         50% {
-            transform: translate(-50%, -2%) rotateZ(180deg);
+            opacity: 1;
         }
 
         75% {
-            transform: translate(-50%, -2%) rotateZ(270deg);
+            opacity: .5;
         }
 
         100% {
-            transform: translate(-50%, 0%) rotateZ(360deg);
-        }
-    }
-
-    .breathing-light {
-        position: absolute;
-        z-index: 1;
-        padding-top: 20%;
-        padding-left: 25%;
-        animation: breathe 5s infinite;
-    }
-
-    @keyframes breathe {
-        0% {
-            opacity: 1;
-        }
-
-        50% {
-            opacity: 0.5;
-            text-shadow: 0 0 20px #CFB53B, 0 0 20px #CFB53B, 0 0 20px #CFB53B, 0 0 20px #CFB53B;
-        }
-        100% {
-            opacity: 1;
+            opacity: .25;
         }
     }
 
